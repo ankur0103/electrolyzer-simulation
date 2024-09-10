@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Canvas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Include interact.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <h1>Simulation Canvas</h1>
+    <div id="icon-bar">
+        <div class="icon-container">
+            <img src="{{ url_for('static', filename='icons/electrolyzer.png') }}" class="icon" data-type="electrolyzer" alt="Electrolyzer">
+            <div class="icon-label">Electrolyzer</div>
+        </div>
+        <div class="icon-container">
+            <img src="{{ url_for('static', filename='icons/solar.png') }}" class="icon" data-type="solar_power" alt="Solar Power">
+            <div class="icon-label">Solar Power</div>
+        </div>
+        <div class="icon-container">
+            <img src="{{ url_for('static', filename='icons/wind.png') }}" class="icon" data-type="wind_power" alt="Wind Power">
+            <div class="icon-label">Wind Power</div>
+        </div>
+        <div class="icon-container">
+            <img src="{{ url_for('static', filename='icons/storage.png') }}" class="icon" data-type="storage" alt="Storage">
+            <div class="icon-label">Storage</div>
+        </div>
+    </div>
+    <div id="canvas"></div>
+    <button onclick="runSimulation()">Run Simulation</button>
+</body>
+</html>
