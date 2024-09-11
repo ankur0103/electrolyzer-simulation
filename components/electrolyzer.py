@@ -54,5 +54,8 @@ class Electrolyzer(Component):
         if self.power_source:
             power_input = self.power_source.get_power(time_step)
             hydrogen_produced = self.produce_hydrogen(power_input)
+            print(self.power_source, power_input, hydrogen_produced, "=====================")
             if self.storage:
+                print(self.storage, "-----------")
                 self.storage.store_hydrogen(hydrogen_produced)
+                print("storage added")
